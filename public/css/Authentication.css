@@ -1,0 +1,130 @@
+/* General Container */
+.authContainer {
+display:  flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 90vh;
+
+}
+
+.loginContainer {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* Form Styles */
+.authForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+}
+
+.authInputFied {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+    margin-bottom: 5px;
+}
+
+.authInputFied:focus {
+    border-color: #007bff;
+}
+
+/* Button Styles */
+.authPrimaryButton {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.authPrimaryButton:hover {
+    background-color: #0056b3;
+}
+
+.authSecondaryButton {
+    background-color: transparent;
+    color: #007bff;
+    padding: 10px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.authSecondaryButton:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Extra Options */
+.authMoreOptionsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.authMoreOptionsContainer span {
+    font-size: 14px;
+    color: #333;
+}
+.firstRegistrationForm{
+    padding:  10px;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    height: 140px;
+
+}
+.firstRegistrationForm h3{
+    font-size: 1.2rem;
+}
+.AccountTypeSelectionContainer{
+    display: inline-block;
+    padding: 7px;
+    background-color: #007bff;
+    border-radius: 6px;
+    margin: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+.secondRegistrationForm{
+    display: none;
+
+}
+.firstRegistrationForm button{
+    background-color: #15d500;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    width: 100%;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .loginContainer {
+        padding: 15px;
+    }
+}

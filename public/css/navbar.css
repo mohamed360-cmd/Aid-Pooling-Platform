@@ -1,0 +1,66 @@
+/* Navbar container */
+.Navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar heading */
+.Navbar h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Navbar buttons container */
+.navbarControlBtns {
+    background-color: #555;
+    color: white;
+    padding: 8px 16px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+/* Hover effect for buttons */
+.navbarControlBtns:hover {
+    background-color: #777;
+}
+
+/* Special styles for each button */
+.navGetDonationBtn {
+    background-color: #28a745; /* Green for Get Donations */
+}
+
+.navDonateBtn {
+    background-color: #ff9800; /* Orange for Donate */
+}
+
+.navLoginBtn {
+    background-color: #007bff; /* Blue for Login */
+}
+
+.navsiggUpBtn {
+    background-color: #dc3545; /* Red for Signup */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .Navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbarControlBtns {
+        margin: 5px 0;
+        width: 100%;
+        text-align: center;
+    }
+}

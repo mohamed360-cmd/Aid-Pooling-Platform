@@ -1,0 +1,22 @@
+<div class="Navbar">
+    <h2>
+        MyAid
+    </h2>
+    <% if(authStatus){%>
+        <% if(userRole == "Admin"){%>
+            #Render Admin Contorls 
+        <%}else if (userRole == "recipient"){%>
+            #Render donation recepient controls
+        <%}else if(userRole == "Doner"){%>
+            #render doner controls
+        <%}%>
+    <%}else{%>
+        <div class="navButtonControls">
+        <button class="navbarControlBtns navGetDonationBtn" id="navGetDonationBtn">Get Donations</button>
+        <button class="navbarControlBtns navDonateBtn " id="navDonateBtn">Donate</button>
+        <button class="navbarControlBtns navLoginBtn" id="navLoginBtn">Login</button>
+        <button class="navbarControlBtns navsignUpBtn" id="navsignUpBtn">Signup</button>            
+        </div>
+
+    <%}%>
+</div>
