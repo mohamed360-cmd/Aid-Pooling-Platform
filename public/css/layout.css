@@ -3,3 +3,31 @@
     margin: 0px;
     box-sizing: border-box;
 }
+.Alert{
+    padding: 10px;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    border-radius: 10px;
+    border: 1px solid white;
+    color: white;
+    display:  flex;
+    flex-direction: row;
+}
+.SuccessAlertContainer{
+    background-color: rgb(27, 199, 27);
+}
+.ErrorAlertContainer{
+    background-color: red;
+}
+.CloseBtn{
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    background-color: rgba(240, 248, 255, 0.499);
+    margin-left: 2px;
+    cursor: pointer;
+}

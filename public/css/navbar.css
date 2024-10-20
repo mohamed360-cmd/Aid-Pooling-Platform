@@ -3,59 +3,98 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    padding: 10px 20px;
+    background-color: #2c3e50; /* Darker shade for a modern look */
+    padding: 15px 30px; /* Increased padding */
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    height: 60px;
 }
 
 /* Navbar heading */
 .Navbar h2 {
     margin: 0;
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 28px; /* Slightly larger font size */
 }
 
 /* Navbar buttons container */
 .navbarControlBtns {
-    background-color: #555;
+    background-color: #34495e; /* Updated background for buttons */
     color: white;
-    padding: 8px 16px;
+    padding: 10px 15px; /* Increased padding */
     margin-left: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px; /* More rounded corners */
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform for effect */
     font-size: 16px;
 }
 
 /* Hover effect for buttons */
 .navbarControlBtns:hover {
-    background-color: #777;
+    background-color: #4a8bc2; /* New hover color */
+    transform: scale(1.05); /* Slight scaling effect on hover */
 }
 
 /* Special styles for each button */
 .navGetDonationBtn {
-    background-color: #28a745; /* Green for Get Donations */
+    background-color: #27ae60; /* Green for Get Donations */
 }
 
 .navDonateBtn {
-    background-color: #ff9800; /* Orange for Donate */
+    background-color: #e67e22; /* Orange for Donate */
 }
 
 .navLoginBtn {
-    background-color: #007bff; /* Blue for Login */
+    background-color: #2980b9; /* Blue for Login */
 }
 
 .navsiggUpBtn {
-    background-color: #dc3545; /* Red for Signup */
+    background-color: #c0392b; /* Red for Signup */
 }
 
+.DonerControls {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    gap: 1rem; /* Space between buttons */
+    padding: 5px; /* Padding around the controls */
+    background-color: #f9f9f9; /* Light background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.userControlsBtn {
+    background-color: #007bff; /* Primary button color */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 0.75rem 1.5rem; /* Padding for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+.userControlsBtn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.userControlsBtn:active {
+    transform: translateY(0); /* Reset lift effect on click */
+}
+
+.logOut {
+    background-color: #dc3545; /* Logout button color */
+}
+
+.logOut:hover {
+    background-color: #c82333; /* Darker shade on hover */
+}
 /* Responsive Design */
 @media (max-width: 768px) {
     .Navbar {
         flex-direction: column;
         align-items: flex-start;
+        padding: 10px 20px; /* Adjusted padding for mobile */
     }
 
     .navbarControlBtns {

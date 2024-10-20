@@ -7,12 +7,21 @@
     <link rel="stylesheet" href="../public/css/layout.css">
     <link rel="stylesheet" href="../public/css/Authentication.css">
     <link rel="stylesheet" href="../public/css/navbar.css">
-    <script src="../public/js/Main.js"></script>
-    <script src="../public/js/navbar.js"></script>
-    <script src="../public/js/Authentication.js"></script>
+    <link rel="stylesheet" href="../public/css/home.css">
+    <link rel="stylesheet" href="../public/css/addDonations.css">
 </head>
 <body>
     <%- include("partials/Navbar")%>
+    <% if(errorStatus ){%>
+        <%- include("partials/ErrorAlert") %>
+    <%} %>
+    <% if(successStatus){%>
+        <%- include("partials/SuccessAlert") %>
+    <%}%>
     <%- body %>
+    <script src="../public/js/Main.js"></script>
+    <script src="../public/js/navbar.js"></script>
+    <script src="../public/js/Authentication.js"></script>
+    <script src="../public/js/addDonations.js"></script>
 </body>
 </html>

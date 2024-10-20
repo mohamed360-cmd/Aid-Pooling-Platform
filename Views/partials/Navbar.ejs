@@ -2,14 +2,21 @@
     <h2>
         MyAid
     </h2>
+
     <% if(authStatus){%>
+        <div class="navButtonControls">
         <% if(userRole == "Admin"){%>
-            #Render Admin Contorls 
-        <%}else if (userRole == "recipient"){%>
-            #Render donation recepient controls
-        <%}else if(userRole == "Doner"){%>
-            #render doner controls
+            <p>Admin</p>
+        <%}else if (userRole == "RECIPIENT"){%>
+            <p>Reciever</p>
+        <%}else if(userRole == "DONER"){%>
+            <div class="DonerControls userControls">
+                <button class="userControlsBtn ManageDontaionsBtn">Manage Donations</button>
+                <button class="userControlsBtn addDontaionBtn" onclick="goToAddDonationsPage()">Add Donations</button>
+                <button class="userControlsBtn logOut">Logout</button>
+            </div>
         <%}%>
+    </div>
     <%}else{%>
         <div class="navButtonControls">
         <button class="navbarControlBtns navGetDonationBtn" id="navGetDonationBtn">Get Donations</button>

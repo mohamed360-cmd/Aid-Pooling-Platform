@@ -1,61 +1,65 @@
 /* General Container */
 .authContainer {
-display:  flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-height: 90vh;
-
-}
-
-.loginContainer {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 90vh;
+    background-color: #f4f4f4; /* Light background for contrast */
+}
 
+/* Login Container */
+.loginContainer {
+    background-color: #ffffff;
+    padding: 30px 40px; /* Increased padding for spaciousness */
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Deeper shadow for modern look */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center;
+    align-items: center;
 }
 
 /* Form Styles */
 .authForm {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    max-width: 500px;
+    gap: 20px; /* Increased gap */
+    max-width: 400px; /* Reduced max-width for better focus */
+    width: 100%; /* Full width */
 }
 
+/* Input Fields */
 .authInputFied {
     width: 100%;
-    padding: 10px;
+    padding: 12px; /* Increased padding */
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px; /* More rounded corners */
     font-size: 16px;
     outline: none;
-    transition: border-color 0.3s;
-    margin-bottom: 5px;
+    transition: border-color 0.3s, box-shadow 0.3s; /* Added box-shadow transition */
 }
 
 .authInputFied:focus {
     border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Focus shadow */
 }
 
 /* Button Styles */
 .authPrimaryButton {
     background-color: #007bff;
-    color: #fff;
+    color: #ffffff;
     padding: 12px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px; /* More rounded corners */
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s; /* Added transform for effect */
 }
 
 .authPrimaryButton:hover {
     background-color: #0056b3;
+    transform: translateY(-2px); /* Lift effect on hover */
 }
 
 .authSecondaryButton {
@@ -63,15 +67,16 @@ height: 90vh;
     color: #007bff;
     padding: 10px;
     border: 2px solid #007bff;
-    border-radius: 5px;
+    border-radius: 8px; /* More rounded corners */
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s; /* Added transform */
 }
 
 .authSecondaryButton:hover {
     background-color: #007bff;
-    color: #fff;
+    color: #ffffff;
+    transform: translateY(-2px); /* Lift effect on hover */
 }
 
 /* Extra Options */
@@ -79,52 +84,93 @@ height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
-    gap: 10px;
 }
 
 .authMoreOptionsContainer span {
     font-size: 14px;
-    color: #333;
+    color: #555; /* Darker text for better contrast */
 }
-.firstRegistrationForm{
-    padding:  10px;
-    border: 2px solid #007bff;
-    border-radius: 10px;
-    height: 140px;
 
+/* Registration Form */
+.firstRegistrationForm {
+    padding: 15px;
+    border: 2px solid #007bff;
+    border-radius: 15px; /* More rounded corners */
+    max-height: 140px;
 }
-.firstRegistrationForm h3{
-    font-size: 1.2rem;
+
+.firstRegistrationForm h3 {
+    font-size: 1.5rem; /* Larger title */
 }
-.AccountTypeSelectionContainer{
+
+/* Account Type Selection */
+.AccountTypeSelectionContainer {
     display: inline-block;
-    padding: 7px;
+    padding: 10px;
     background-color: #007bff;
-    border-radius: 6px;
+    border-radius: 8px; /* More rounded corners */
     margin: 5px;
-    color: #fff;
+    color: #ffffff;
     cursor: pointer;
 }
-.secondRegistrationForm{
-    display: none;
 
+/* Second Registration Form */
+.secondRegistrationForm {
+    display: block;
 }
-.firstRegistrationForm button{
+
+/* Buttons within First Registration Form */
+.firstRegistrationForm button {
     background-color: #15d500;
-    color: #fff;
+    color: #ffffff;
     padding: 12px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px; /* More rounded corners */
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s; /* Added transform */
     display: block;
     width: 100%;
 }
+
+.firstRegistrationForm button:hover {
+    background-color: #12b300; /* Darker green on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Account Type */
+.AccountType {
+    display: flex;
+    flex-direction: row;
+    border-radius: 15px; /* More rounded corners */
+    background-color: #007bff;
+    color: white;
+    height: 50px;
+}
+
+.AccountType h3 {
+    background-color: #333;
+    border-radius: 15px; /* More rounded corners */
+    padding: 5px;
+}
+
+/* Account Type Options */
+.AccountTypeOptions {
+    padding: 10px;
+    background-color: #15d500;
+    border-radius: 8px; /* More rounded corners */
+    margin-left: 5px;
+    font-weight: bold;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .loginContainer {
-        padding: 15px;
+        padding: 20px; /* Adjusted padding for mobile */
+    }
+
+    .authForm {
+        gap: 10px; /* Reduced gap on mobile */
+        max-width: 90%; /* More flexible width */
     }
 }

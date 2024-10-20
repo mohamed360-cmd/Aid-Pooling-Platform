@@ -1,0 +1,10 @@
+.mainHomeContainer{
+    height: 90.5vh;
+    width: 100vw;
+    background-color: black;
+    overflow: hidden;
+}
+.mainHomeContainer video{
+    height: 100%;
+    width: 100%;
+}

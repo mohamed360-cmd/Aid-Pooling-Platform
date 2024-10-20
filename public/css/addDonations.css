@@ -1,0 +1,69 @@
+.mainAddDonationsContainer {
+    max-width: 600px; /* Maximum width of the form */
+    margin: 2rem auto; /* Center the form on the page */
+    padding: 2rem; /* Padding around the form */
+    background-color: #ffffff; /* White background for the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.donation-form {
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+}
+
+.form-label {
+    margin-bottom: 0.5rem; /* Space below labels */
+    font-weight: bold; /* Bold text for labels */
+}
+
+.form-input, 
+.form-textarea {
+    padding: 0.75rem; /* Padding inside inputs and textarea */
+    margin-bottom: 1rem; /* Space below each input */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Font size */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+.form-input:focus, 
+.form-textarea:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+.form-textarea {
+    resize: vertical; /* Allow vertical resizing only */
+}
+
+.form-checkbox {
+    margin-right: 0.5rem; /* Space between checkbox and label */
+}
+
+.form-submit-btn {
+    background-color: #007bff; /* Primary button color */
+    color: white; /* Text color */
+    padding: 0.75rem; /* Padding for the button */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for background */
+}
+
+.form-submit-btn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+@media (max-width: 600px) {
+    .mainAddDonationsContainer {
+        padding: 1rem; /* Reduce padding on smaller screens */
+    }
+
+    .form-input, 
+    .form-textarea, 
+    .form-submit-btn {
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+    }
+}

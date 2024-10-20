@@ -1,62 +1,65 @@
-const sendAuthDetails = async(data,endpoint)=>{
+const sendAuthDetails = async (data, endpoint) => {
     try {
-        const res = await fetch(`http://localhost:8080/${endpoint}`,{
-            method : "POST",
-            headers : {
-                "content-type" : "application/json"
+        const res = await fetch(`http://localhost:8080/${endpoint}`, {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
             },
-            body : JSON.stringify(data)
+            body: JSON.stringify(data)
         })
         //weka response hapa 
+
     } catch (error) {
-        console.log("Error in the sendAuthDetails function",error)
+        console.log("Error in the sendAuthDetails function", error)
     }
 }
-document.addEventListener("DOMContentLoaded",()=>{
-    const tosecondRegistrationFormBtn = document.getElementById("tosecondRegistrationFormBtn")
-    const AccountTpe_RECIPIENT=  document.getElementById("AccountTpe_RECIPIENT")
-    const AccountTpe_DONER = document.getElementById("AccountTpe_DONER")
+const registerUser = () => {
+    const registerPassword = document.getElementById('registerPassword');
+    const registerPasswordAgain = document.getElementById('registerPasswordAgain');
+    const registrationFormError = document.getElementById('registrationFormError');
+    
+    // Get selected account type value
+    const accountType = document.querySelector('input[name="Account_Type"]:checked');
+    
+    if (registerPassword.value === registerPasswordAgain.value) {
+        if (accountType) {
+            // Send the form with method and action
+            const registrationForm = document.getElementById('registrationForm');
+            registrationForm.setAttribute("method", "POST");
+            registrationForm.setAttribute("action", "/register");
+                        registrationForm.submit();
+        } else {
+            registrationFormError.textContent = "Please select an account type.";
+        }
+    } else {
+        registrationFormError.textContent = "Passwords do not match!";
+    }
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+    console.log('Loaded')
     const ErrorMessageAccountTypeSelection = document.getElementById("ErrorMessageAccountTypeSelection")
-    tosecondRegistrationFormBtn.addEventListener("click",()=>{
-        if(!AccountTpe_RECIPIENT.checked && !AccountTpe_DONER.checked){//this checks if user has not selected an Account type
-            //show some error message 
-            ErrorMessageAccountTypeSelection.textContent = "Please Select An Account Type "
-        }else{
-            const secondRegistrationForm = document.getElementById('secondRegistrationForm')
-            const firstRegistrationForm = document.getElementById("firstRegistrationForm")
-            firstRegistrationForm.style.display = "none"
-            secondRegistrationForm.style.display = "block"
+    const loginBtnMain = document.getElementById("loginBtnMain")
+    const registerBtn = document.getElementById('registerBtn')
+    gotoRegisterPageBtn.addEventListener('click', () => {
+        window.location.href = "/register"
+    })
+    loginBtnMain.addEventListener('click', () => {
+        const loginForm = document.getElementById('loginForm')
+        const loginEmail = document.getElementById('loginEmail').value
+        const loginPassword = document.getElementById('loginPassword').value
+
+        if (loginEmail.length > 1 && loginPassword.length > 2) {
+            loginForm.setAttribute("method", "POST")
+            loginForm.setAttribute("action", "/login")
+            loginForm.submit()
+        } else {
+            const LoginFormErrorMsg = document.getElementById('LoginFormErrorMsg')
+            LoginFormErrorMsg.textContent = "Error In the Value Lenght "
         }
     })
-    const registerBtn = document.getElementById('registerBtn')
-    registerBtn.addEventListener('click',()=>{
-        const ErrorMessageFormError  = document.getElementById('ErrorMessageFormError')
-        const registerEmail = document.getElementById('registerEmail').value
-        const registrationName = document.getElementById('registrationName').value
-        const registrationPhoneNumber = document.getElementById('registrationPhoneNumber').value
-        const registrationPassword = document.getElementById('registrationPassword').value
-        const passwordAgain = document.getElementById('passwordAgain').value
-        console.log(registerEmail.length)
-        if(registrationName.length > 1 && registerEmail.length > 1
-             && registrationPhoneNumber.length > 1  
-            && registrationPassword.length > 1 
-            ){
-                if(registrationPassword === passwordAgain){
-                    //send the deatials to the server
-                    const registrationDetails = {
-                        Organization_Email  : registerEmail,
-                        Organization_Name : registrationName,
-                        Organization_PhoneNumber : registrationPhoneNumber,
-                        Organization_Password : registrationPassword,
-                        Account_Type : AccountTpe_DONER.checked ? AccountTpe_DONER.value : AccountTpe_RECIPIENT.value
-                    }
-                    sendAuthDetails(registrationDetails,"register")
-                }else{
-                    ErrorMessageFormError.textContent = "Password Not the Same"
-                }
-            }else{
-                ErrorMessageFormError.textContent = "Please Fill the form correctly"
+        //user registration
 
-            }
-    })
+
+    
 })

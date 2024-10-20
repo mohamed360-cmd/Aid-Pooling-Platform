@@ -16,4 +16,7 @@ navDonateBtn.addEventListener("click",()=>{
     window.location.href = "/register"
 })
 })
+const goToAddDonationsPage = ()=>{
+    window.location.href = "/doner/addDonation"
+}
 

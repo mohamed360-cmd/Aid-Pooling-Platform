@@ -1,31 +1,28 @@
 <div class="authContainer registerContainer">
-    <div class="firstRegistrationForm" id="firstRegistrationForm">
-
-        <h3>What do you want to register as</h3>
-        <div class="AccountTypeSelectionContainer">
-            <label>As A Recipient</label>
-            <input type="radio" name="AccountTpe" value="RECIPIENT"  id="AccountTpe_RECIPIENT"/>
+<form class="registrationForm" id="registrationForm">
+    <p id="registrationFormError" style="color: red;"></p>
+    <input placeholder="Enter Your Organizational Email" type="email" required name="Organization_Email" class="authInputFied"/>
+    <input  placeholder="Enter Your Organization Name" type="text" required name="Organization_Name" class="authInputFied"/>
+    <input  placeholder="Enter Your Organization PhoneNumber" type="text" required name="Organization_PhoneNumber" class="authInputFied"/>
+    <div class="AccountType">
+        <h3>Type of Account</h3>
+        <div class="AccountTypeOptions">
+            <label for="recipient">Recipient</label>
+            <input type="radio" value="RECIPIENT" name="Account_Type" id="Account_Type_Recipient"/>
         </div>
-        <div class="AccountTypeSelectionContainer">
-            <label>As A Doner</label>
-            <input type="radio" name="AccountTpe" value="DONER" id="AccountTpe_DONER" />
+        <div class="AccountTypeOptions">
+            <label for="Doner">Doner</label>
+            <input type="radio" value="DONER" name="Account_Type" id="Account_Type_Doner"/>
         </div>
-        <h4 id="ErrorMessageAccountTypeSelection" style="color: red;"></h4>
-        <button id="tosecondRegistrationFormBtn">Next</button>  
     </div>
-    <div class="secondRegistrationForm authForm" id="secondRegistrationForm">
-        <h4 id="ErrorMessageFormError" style="color: red;"></h4>
+    <input  placeholder="Enter Password" type="password" required name="Organization_Password" class="authInputFied" id="registerPassword"/>
+    <input  placeholder="Password Again" type="password" required class="authInputFied" id="registerPasswordAgain"/>
+</form>    
+<button class="authPrimaryButton registerBtn" type="button" id="registerBtn" onclick="registerUser()">Register</button>
 
-    <input placeholder="Enter Organization Email" type="email" required class="authInputFied" id="registerEmail"/>
-    <input placeholder="Enter Organization Name" type="text" required class="authInputFied" id="registrationName"/>
-    <input placeholder="Enter Organization PhoneNumber" type="email" required class="authInputFied" id="registrationPhoneNumber"/>
-    <input placeholder="Password" type="password" required class="authInputFied" id="registrationPassword"/>
-    <input placeholder="Password Again" type="password" required class="authInputFied" id="passwordAgain"/>
-    <button class="authPrimaryButton registerBtn" id="registerBtn">Register</button>
-    </div>
-    <div class="authMoreOptionsContainer">
+ <div class="authMoreOptionsContainer">
         <span>Already Have and Account ?</span>
-        <button class="authSecondaryButton registerBtn">Login</button>
+        <button class="authSecondaryButton ">Login</button>
 
     </div>
 </div>
