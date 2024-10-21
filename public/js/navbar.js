@@ -19,4 +19,6 @@ navDonateBtn.addEventListener("click",()=>{
 const goToAddDonationsPage = ()=>{
     window.location.href = "/doner/addDonation"
 }
-
+const goToManageDonationsPage = ()=>{
+    window.location.href = "/doner/manageDonations"
+}

@@ -1,0 +1,35 @@
+<div class="mainDonationManagementContainer">
+    <%if(data.length > 0){%>
+        <% data.map(donation=>{ %>
+            <form id="donationItem<%-donation.id%>" class="donationsContainer">
+                <div class="floatingLogoContainer">
+                    <img src="../public/Assets/logo.png">
+                </div>
+                <input type="text" value="<%-donation.id%>" hidden/>
+                <h3 class="donerName"><%-donation.Doner_Name%></h3>
+                <p class="donationType"><%-donation.Donation_Type%></p>
+                <p class="donationDescription"><%-donation.Donation_Description%></p>
+                <p class="donationAmount">Amount/Quantity<%-donation.Donation_Amount%></p>
+                <p class="Expiration_Date"> Expiration <%donation.Expiration_Date%></p>
+                <p class="Dontaion_Pickup_Location"> Pickup Location <%-donation.Dontaion_Pickup_Location%></p>
+                <p class="Donation_Availability">
+                    <%if(donation.Donation_Availability == "1"){%>
+                        Available
+                    <%}else{%>
+                        Not Available
+                    <%}%>
+                </p>
+                <div>
+                    <button type="button" class="mangeDonationBtn ManageBtn" onclick="editDonation()">Edit</button>
+                    <button type="button" class="mangeDonationBtn Deletebtn">Remove</button>
+                    <button type="button" class="mangeDonationBtn changeStatus">Change Status</button>
+                    <button type="button" class="mangeDonationBtn donationRequest">See  Request</button>
+                </div>
+            </form>
+       <% }) %>
+    <%} else{%>
+        <div>
+            <p>You Have Not Made Any Donations</p>
+        </div>
+    <%}%>
+</div>

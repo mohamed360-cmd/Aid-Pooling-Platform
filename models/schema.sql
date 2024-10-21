@@ -25,5 +25,6 @@ CREATE TABLE Donations(
     Expiration_Date DATE,
     Dontaion_Pickup_Location VARCHAR(500),
     FOREIGN KEY (Doner_Id) REFERENCES users(id),
-    Donation_Availability VARCHAR(10)
+    Donation_Availability VARCHAR(10),
+    Doner_Name VARCHAR(255)
 );

@@ -10,11 +10,23 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
     height: 60px;
 }
-
+.NavfloatingLogoContainer{
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+    display: flex;
+    flex-direction: row;
+}
+.NavfloatingLogoContainer img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
 /* Navbar heading */
-.Navbar h2 {
+.NavfloatingLogoContainer h2 {
     margin: 0;
     font-size: 28px; /* Slightly larger font size */
+    align-self: center;
 }
 
 /* Navbar buttons container */

@@ -1,7 +1,11 @@
 <div class="Navbar">
-    <h2>
-        MyAid
-    </h2>
+    <div class="NavfloatingLogoContainer">
+        <img src="../public/Assets/logo.png">
+        <h2>
+            MyAid
+        </h2>
+    </div>
+
 
     <% if(authStatus){%>
         <div class="navButtonControls">
@@ -11,7 +15,7 @@
             <p>Reciever</p>
         <%}else if(userRole == "DONER"){%>
             <div class="DonerControls userControls">
-                <button class="userControlsBtn ManageDontaionsBtn">Manage Donations</button>
+                <button class="userControlsBtn ManageDontaionsBtn" onclick="goToManageDonationsPage()">Manage Donations</button>
                 <button class="userControlsBtn addDontaionBtn" onclick="goToAddDonationsPage()">Add Donations</button>
                 <button class="userControlsBtn logOut">Logout</button>
             </div>
