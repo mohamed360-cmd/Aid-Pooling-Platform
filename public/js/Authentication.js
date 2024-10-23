@@ -37,7 +37,6 @@ const registerUser = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-    console.log('Loaded')
     const ErrorMessageAccountTypeSelection = document.getElementById("ErrorMessageAccountTypeSelection")
     const loginBtnMain = document.getElementById("loginBtnMain")
     const registerBtn = document.getElementById('registerBtn')
@@ -49,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const loginEmail = document.getElementById('loginEmail').value
         const loginPassword = document.getElementById('loginPassword').value
 
-        if (loginEmail.length > 1 && loginPassword.length > 2) {
+        if (loginEmail.length > 1 && loginPassword.length > 1) {
             loginForm.setAttribute("method", "POST")
             loginForm.setAttribute("action", "/login")
             loginForm.submit()

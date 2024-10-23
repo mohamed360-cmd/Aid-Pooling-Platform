@@ -122,6 +122,9 @@
     width: 100%;
     object-fit: contain;
 }
+.D_Not_Available{
+    background-color: red;
+}
 /* Add subtle hover effect */
 .mangeDonationBtn:hover {
   

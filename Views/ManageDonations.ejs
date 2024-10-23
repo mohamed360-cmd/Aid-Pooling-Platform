@@ -5,14 +5,15 @@
                 <div class="floatingLogoContainer">
                     <img src="../public/Assets/logo.png">
                 </div>
-                <input type="text" value="<%-donation.id%>" hidden/>
+                 <input type="text" value="<%-donation.id%>" name="donationId" hidden/> 
                 <h3 class="donerName"><%-donation.Doner_Name%></h3>
-                <p class="donationType"><%-donation.Donation_Type%></p>
-                <p class="donationDescription"><%-donation.Donation_Description%></p>
+                <p class="donationType">Category : <%-donation.Donation_Type%></p>
+                <p class="donationDescription"> Description :<%-donation.Donation_Description%></p>
                 <p class="donationAmount">Amount/Quantity<%-donation.Donation_Amount%></p>
-                <p class="Expiration_Date"> Expiration <%donation.Expiration_Date%></p>
+                <p class="Expiration_Date"> Expiration <%-donation.Expiration_Date%></p>
                 <p class="Dontaion_Pickup_Location"> Pickup Location <%-donation.Dontaion_Pickup_Location%></p>
-                <p class="Donation_Availability">
+                <p class='Donation_Availability <%if(donation.Donation_Availability == "1"){%> D_Available<%}else{%>D_Not_Available<%}%>' >
+                    <input value="<%-donation.Donation_Availability%>" name="Donation_Availability"  hidden/>
                     <%if(donation.Donation_Availability == "1"){%>
                         Available
                     <%}else{%>
@@ -20,10 +21,10 @@
                     <%}%>
                 </p>
                 <div>
-                    <button type="button" class="mangeDonationBtn ManageBtn" onclick="editDonation()">Edit</button>
-                    <button type="button" class="mangeDonationBtn Deletebtn">Remove</button>
-                    <button type="button" class="mangeDonationBtn changeStatus">Change Status</button>
-                    <button type="button" class="mangeDonationBtn donationRequest">See  Request</button>
+                    <button type="button" class="mangeDonationBtn ManageBtn" type="button" onclick="editDonation('<%-donation.id%>')">Edit</button>
+                    <button type="button" class="mangeDonationBtn Deletebtn" type="button" onclick="removeDonation('<%-donation.id%>')">Remove</button>
+                    <button type="button" class="mangeDonationBtn changeStatus" type="button" onclick="changeDonationStatus('<%-donation.id%>')">Change Status</button>
+                    <button type="button" class="mangeDonationBtn donationRequest" type="button">See  Request</button>
                 </div>
             </form>
        <% }) %>
