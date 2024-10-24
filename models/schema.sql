@@ -28,3 +28,12 @@ CREATE TABLE Donations(
     Donation_Availability VARCHAR(10),
     Doner_Name VARCHAR(255)
 );
+CREATE TABLE donation_Requests( 
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    Recipient_Name VARCHAR(254),
+    Recipient_Email VARCHAR(254),
+    Requested_Time DATE,
+    Donation_Id INT,
+    Request_Status BOOLEAN,
+    FOREIGN KEY (Donation_Id) REFERENCES donations(id)
+);

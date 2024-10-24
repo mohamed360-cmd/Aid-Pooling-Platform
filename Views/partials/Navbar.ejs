@@ -12,7 +12,11 @@
         <% if(userRole == "Admin"){%>
             <p>Admin</p>
         <%}else if (userRole == "RECIPIENT"){%>
-            <p>Reciever</p>
+            <div class="RecipientControls userControls">
+                <button class="userControlsBtn "  onclick="goToAvaliableDonationsPage()">Available Donations</button>
+                <button class="userControlsBtn addDontaionBtn">My Request</button>
+                <button class="userControlsBtn logOut">Logout</button>
+            </div>
         <%}else if(userRole == "DONER"){%>
             <div class="DonerControls userControls">
                 <button class="userControlsBtn ManageDontaionsBtn" onclick="goToManageDonationsPage()">Manage Donations</button>

@@ -22,3 +22,6 @@ const goToAddDonationsPage = ()=>{
 const goToManageDonationsPage = ()=>{
     window.location.href = "/doner/manageDonations"
 }
+const goToAvaliableDonationsPage = ()=>{
+    window.location.href = "/recipient/availableDonations"
+}
