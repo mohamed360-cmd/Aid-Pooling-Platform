@@ -1,7 +1,7 @@
 <div class="mainDonationDisplayContainer">
-    <div>
+    <!-- <div>
         <input placeholder="Search "></div>
-    </div>
+    </div> -->
     <div class="allDonationDisplayContainer">
         <%if(data.length > 0){%>
             <% data.map(donation=>{ %>
@@ -17,7 +17,7 @@
                     <p class="Expiration_Date"> Expiration <%-donation.Expiration_Date%></p>
                     <p class="Dontaion_Pickup_Location"> Pickup Location <%-donation.Dontaion_Pickup_Location%></p>
                     <p class='Donation_Availability <%if(donation.Donation_Availability == "1"){%> D_Available<%}else{%>D_Not_Available<%}%>' >
-                        <input value="<%-donation.Donation_Availability%>" name="Donation_Availability"  hidden/>
+                        <!-- <input value="<%-donation.Donation_Availability%>" name="Donation_Availability"  hidden/> -->
                         <%if(donation.Donation_Availability == "1"){%>
                             Available
                         <%}else{%>
@@ -26,9 +26,9 @@
                     </p>
                     <div>
                         <%if(donation.Donation_Availability == "1"){%>
-                            <button type="button" class="mangeDonationBtn ManageBtn"  type="button" onclick="editDonation('<%-donation.id%>')">Request </button>
+                            <button type="button" class="mangeDonationBtn ManageBtn"  type="button" onclick="requestDonation('<%-donation.id%>')">Request </button>
                         <%}else{%>
-                            <button type="button" class="mangeDonationBtn ManageBtn"  type="button" onclick="editDonation('<%-donation.id%>')" disabled style="cursor: not-allowed;">  Request </button>
+                            <button type="button" class="mangeDonationBtn ManageBtn"  type="button"  disabled style="cursor: not-allowed;">  Request </button>
                             <%}%>
                     </div>
                 </form>

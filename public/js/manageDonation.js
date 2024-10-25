@@ -17,3 +17,9 @@ const changeDonationStatus  = (id)=>{
     donationTile.setAttribute("method","post")
     donationTile.submit()
 }
+const seeDonationRequests = (id)=>{
+    const donationTile = document.getElementById("donationItem"+id)
+    donationTile.setAttribute("action", `/doner/manageDonations/seeDonationRequests`);
+    donationTile.setAttribute("method","post")
+    donationTile.submit()
+}

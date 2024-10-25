@@ -1,46 +1,53 @@
 .mainDonationManagementContainer {
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    height: 89vh;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    height: 90vh;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     align-content: flex-start;
     overflow-y: auto;
-    background: linear-gradient(135deg, #f3f4f6, #ffffff);
+    background: linear-gradient(135deg, #f8f9fc, #ffffff);
 }
 
 .mainDonationManagementContainer::-webkit-scrollbar {
     display: none;
 }
 
+.allDonationDisplayContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    flex-direction: row;
+}
+
 .donationsContainer {
     background-color: #ffffff;
-    border-radius: 12px;
+    border-radius: 14px;
     margin: 15px;
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    max-width: 500px;
+    max-width: 480px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #d1d8e0;
     position: relative;
 }
 
 .donationsContainer:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .donerName {
-    font-size: 1.6em;
-    margin: 0 0 12px;
-    color: #2c3e50;
-    font-weight: 600;
+    font-size: 1.5em;
+    margin: 0 0 14px;
+    color: #34495e;
+    font-weight: 700;
 }
 
 .donationType,
@@ -49,9 +56,9 @@
 .Expiration_Date,
 .Dontaion_Pickup_Location,
 .Donation_Availability {
-    font-size: 1.1em;
+    font-size: 1.05em;
     margin: 6px 0;
-    color: #7f8c8d;
+    color: #7d8a98;
 }
 
 .Donation_Availability {
@@ -59,75 +66,82 @@
     background-color: #27ae60;
     color: white;
     position: absolute;
-    top: 0px;
-    right: 5px;
-    border-radius: 10px;
-    padding: 3px;
+    top: 12px;
+    right: 10px;
+    border-radius: 8px;
+    padding: 4px 8px;
 }
 
 .mangeDonationBtn {
     color: white;
     border: none;
-    padding: 12px 15px;
-    border-radius: 6px;
+    padding: 12px 18px;
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin-right: 5px;
-    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-right: 10px;
+    font-weight: bold;
 }
 
 .ManageBtn {
-    background-color: #3498db; /* Blue */
+    background-color: #1f8ef1;
 }
 
 .ManageBtn:hover {
-    background-color: #2980b9;
+    background-color: #127fc0;
 }
 
 .Deletebtn {
-    background-color: #e74c3c; /* Red */
+    background-color: #e84118;
 }
 
 .Deletebtn:hover {
-    background-color: #c0392b;
+    background-color: #c23616;
 }
 
 .changeStatus {
-    background-color: #f39c12; /* Orange */
+    background-color: #fbc531;
 }
 
 .changeStatus:hover {
-    background-color: #e67e22;
+    background-color: #e1b12c;
 }
 
 .donationRequest {
-    background-color: #27ae60; /* Green */
+    background-color: #4cd137;
 }
 
 .donationRequest:hover {
-    background-color: #1e8449;
+    background-color: #44bd32;
 }
 
-.floatingLogoContainer{
+.floatingLogoContainer {
     position: absolute;
-    top: 0px;
-    left: 0px;
-    height: 50px;
-    width: 50px;
+    top: 12px;
+    left: 12px;
+    height: 48px;
+    width: 48px;
     object-fit: contain;
 }
-.floatingLogoContainer img{
+
+.floatingLogoContainer img {
     height: 100%;
     width: 100%;
     object-fit: contain;
 }
-.D_Not_Available{
-    background-color: red;
+
+.D_Not_Available {
+    background-color: #e74c3c;
+    color: white;
+    padding: 4px 8px;
+    font-weight: bold;
+    border-radius: 8px;
 }
-/* Add subtle hover effect */
+
 .mangeDonationBtn:hover {
-  
+    transform: translateY(-2px);
+}
 
 @media (max-width: 600px) {
     .mainDonationManagementContainer {
@@ -135,7 +149,7 @@
     }
 
     .donationsContainer {
-        padding: 15px;
+        padding: 16px;
         margin: 10px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
@@ -143,5 +157,4 @@
     .mangeDonationBtn {
         padding: 10px 15px;
     }
-}
 }

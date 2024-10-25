@@ -14,14 +14,14 @@
         <%}else if (userRole == "RECIPIENT"){%>
             <div class="RecipientControls userControls">
                 <button class="userControlsBtn "  onclick="goToAvaliableDonationsPage()">Available Donations</button>
-                <button class="userControlsBtn addDontaionBtn">My Request</button>
-                <button class="userControlsBtn logOut">Logout</button>
+                <button class="userControlsBtn addDontaionBtn" onclick="goToMyRequestPage()">My Request</button>
+                <button class="userControlsBtn logOut" onclick="logout()">Logout</button>
             </div>
         <%}else if(userRole == "DONER"){%>
             <div class="DonerControls userControls">
                 <button class="userControlsBtn ManageDontaionsBtn" onclick="goToManageDonationsPage()">Manage Donations</button>
                 <button class="userControlsBtn addDontaionBtn" onclick="goToAddDonationsPage()">Add Donations</button>
-                <button class="userControlsBtn logOut">Logout</button>
+                <button class="userControlsBtn logOut" onclick="logout()">Logout</button>
             </div>
         <%}%>
     </div>

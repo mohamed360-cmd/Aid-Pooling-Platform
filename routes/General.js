@@ -1,9 +1,10 @@
 const express = require('express')
 const route = express.Router()
-const {home,getLogin,getRegister,register,login} = require('../Controllers/generalController')
+const {home,getLogin,getRegister,register,login,logout} = require('../Controllers/generalController')
 route.get("/",home)
 route.get("/login",getLogin)
 route.get("/register",getRegister)
 route.post("/register",register)
 route.post("/login",login)
+route.get("/logout",logout)
 module.exports = route

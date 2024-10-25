@@ -197,6 +197,69 @@ const changeDonationStatus = async(req,res)=>{
         res.render("home",{authStatus: false, errorStatus: true, successStatus: false, errorMsg: userVerfier.msg, successMsg: null, userRole: null})
     }
 }
+const seeDonationRequests = async(req,res)=>{
+    const tokenCheck = await JWT_verify(req)
+    const userVerfier = Doner_Check(tokenCheck)
+    if(userVerfier.status){
+        const donationId = req.body.donationId
+        const idorCheck = await idorGuard(donationId,userVerfier.data.email)
+        if(idorCheck.status){
+            var sqlStatement = 'SELECT * FROM  donation_requests WHERE Donation_Id=?'
+            var params = [donationId]
+            const donationsList = await queryExecuter(sqlStatement,params)
+            res.render("seeRequest",{authStatus: true, errorStatus: false, successStatus: false, errorMsg: null, successMsg: null, userRole: userVerfier.data.userRole,data : donationsList})
+        }else{
+            res.render("home",{authStatus: false, errorStatus: true, successStatus: false, errorMsg: idorCheck.msg, successMsg: null, userRole: userVerfier.data.userRole,data : null})
+        }
+    }else{
+        res.render("home",{authStatus: false, errorStatus: true, successStatus: false, errorMsg: userVerfier.msg, successMsg: null, userRole: null})
+    }
+}
+const denyDonationRequest = async(req,res)=>{
+    const tokenCheck = await JWT_verify(req)
+    const userVerfier = Doner_Check(tokenCheck)
+    if(userVerfier.status){
+        const donationId = req.body.donationId
+        const idorCheck = await idorGuard(donationId,userVerfier.data.email)
+        if(idorCheck.status){
+
+            var sqlStatement = 'UPDATE donation_requests SET `Request_Approval`=? WHERE id=?'
+            var params = ["DENIDED",req.body.donationRequestId]
+            const updateResult = await queryExecuter(sqlStatement,params)
+           sqlStatement = 'SELECT * FROM  donation_requests WHERE Donation_Id=?'
+             params = [donationId]
+            const donationsList = await queryExecuter(sqlStatement,params)
+            res.render("seeRequest",{authStatus: true, errorStatus: false, successStatus: true, errorMsg: null, successMsg: "Donation status Has Been Updated", userRole: userVerfier.data.userRole,data : donationsList})
+      
+        }else{
+            res.render("home",{authStatus: false, errorStatus: true, successStatus: false, errorMsg: idorCheck.msg, successMsg: null, userRole: userVerfier.data.userRole,data : null})
+        }
+    }else{
+        res.render("home",{authStatus: false, errorStatus: true, successStatus: false, errorMsg: userVerfier.msg, successMsg: null, userRole: null})
+    }
+}
+const approveDonationRequest = async(req,res)=>{
+    const tokenCheck = await JWT_verify(req)
+    const userVerfier = Doner_Check(tokenCheck)
+    if(userVerfier.status){
+        const donationId = req.body.donationId
+        const idorCheck = await idorGuard(donationId,userVerfier.data.email)
+        if(idorCheck.status){
+
+             var sqlStatement = 'UPDATE donation_requests SET `Request_Approval`=? WHERE id=?'
+             var params = ["APPROVED",req.body.donationRequestId]
+             const updateResult = await queryExecuter(sqlStatement,params)
+            sqlStatement = 'SELECT * FROM  donation_requests WHERE Donation_Id=?'
+              params = [donationId]
+             const donationsList = await queryExecuter(sqlStatement,params)
+             res.render("seeRequest",{authStatus: true, errorStatus: false, successStatus: true, errorMsg: null, successMsg: "Donation status Has Been Updated", userRole: userVerfier.data.userRole,data : donationsList})
+        }else{
+            res.render("home",{authStatus: false, errorStatus: true, successStatus: false, errorMsg: idorCheck.msg, successMsg: null, userRole: userVerfier.data.userRole,data : null})
+        }
+    }else{
+        res.render("home",{authStatus: false, errorStatus: true, successStatus: false, errorMsg: userVerfier.msg, successMsg: null, userRole: null})
+    }
+}
 module.exports = {
     getAddDonation,
     addDonation,
@@ -204,5 +267,8 @@ module.exports = {
     getEditDonation,
     EditDonation,
     removeDonation,
-    changeDonationStatus
+    changeDonationStatus,
+    seeDonationRequests,
+    denyDonationRequest,
+    approveDonationRequest
 }

@@ -25,3 +25,9 @@ const goToManageDonationsPage = ()=>{
 const goToAvaliableDonationsPage = ()=>{
     window.location.href = "/recipient/availableDonations"
 }
+const goToMyRequestPage = ()=>{
+    window.location.href = "/recipient/myRequest"
+}
+const logout = ()=>{
+    window.location.href = "/logout"
+}

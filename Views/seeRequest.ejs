@@ -1,0 +1,35 @@
+<div class="seeRequestMainContainer">
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Organization Name</th>
+                <th>Recipient_Email</th>
+                <th>Requested_Time</th>
+                <th>Request_Approval</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.map(request => { %>
+                <tr>
+                    <td><%- request.Recipient_Name %></td>
+                    <td><%- request.Recipient_Email %></td>
+                    <td><%- request.Requested_Time %></td>
+                    <td><%- request.Request_Approval %></td>
+                    <td>
+                        <form class="donationRequestAction" id="approveDonationRequestd<%-request.id%>" >
+                            <input type="text" hidden value="<%-request.id%>" name="donationRequestId">
+                            <input type="text" hidden value="<%-request.Donation_Id%>" name="donationId">
+                            <button type="button" class="requestActionBtn approveDonation" onclick="approveDonationRequest('<%-request.id%>')">Approve</button>
+                        </form>
+                        <form  class="donationRequestAction" id="denyDonationRequestd<%-request.id%>">
+                            <input type="text" hidden value="<%-request.id%>" name="donationRequestId">
+                            <input type="text" hidden value="<%-request.Donation_Id%>" name="donationId">
+                            <button type="button" class="requestActionBtn denyDonation" onclick="denyDonationRequest('<%-request.id%>')">Deny</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }) %> 
+        </tbody>
+    </table>
+</div>

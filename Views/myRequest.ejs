@@ -1,0 +1,22 @@
+<div class="myRequestsMainContainer">
+    <% if (data && data.length > 0) { %>
+        <% data.forEach(request => { %>
+            <div class="requestCard">
+                <h3 class="request-title">Donation Type: <%= request.Donation_Type %></h3>
+                <p class="request-description"><strong>Description:</strong> <%= request.Donation_Description %></p>
+                <p class="request-date"><strong>Request Date:</strong> <%= request.RequestDate %></p>
+                <p class="request-status">
+                    <strong>Status:</strong> 
+                    <span class="status-badge 
+                        <%= request.RequestStatus === 'APPROVED' ? 'status-approved' : 
+                            request.RequestStatus === 'PENDING' ? 'status-pending' : 
+                            'status-denied' %>">
+                        <%= request.RequestStatus %>
+                    </span>
+                </p>
+            </div>
+        <% }) %>
+    <% } else { %>
+        <p class="no-requests-message">No requests found.</p>
+    <% } %>
+</div>

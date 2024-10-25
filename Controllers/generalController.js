@@ -100,10 +100,20 @@ const register = async (req, res) => {
     }
   }
 }
+const logout = (req,res)=>{
+  res.cookie("jwtToken", "", {
+    httpOnly: true,
+    secure: false,
+    maxAge: -3600000,
+    sameSite: 'strict'
+  })
+  res.redirect("/")
+}
 module.exports = {
   home: home,
   getLogin: getLogin,
   getRegister: getRegister,
   register: register,
-  login: login
+  login: login,
+  logout
 }

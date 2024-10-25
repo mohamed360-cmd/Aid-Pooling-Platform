@@ -34,6 +34,6 @@ CREATE TABLE donation_Requests(
     Recipient_Email VARCHAR(254),
     Requested_Time DATE,
     Donation_Id INT,
-    Request_Status BOOLEAN,
+    Request_Approval VARCHAR(50),
     FOREIGN KEY (Donation_Id) REFERENCES donations(id)
 );
