@@ -13,6 +13,9 @@ const sendAuthDetails = async (data, endpoint) => {
         console.log("Error in the sendAuthDetails function", error)
     }
 }
+const goToLoginPage = ()=>{
+    window.location.href = "/login"
+}
 const registerUser = () => {
     const registerPassword = document.getElementById('registerPassword');
     const registerPasswordAgain = document.getElementById('registerPasswordAgain');
@@ -36,13 +39,14 @@ const registerUser = () => {
     }
 };
 
+const     gotoRegisterPageBtn = () => {
+    window.location.href = "/register"
+}
 document.addEventListener("DOMContentLoaded", () => {
     const ErrorMessageAccountTypeSelection = document.getElementById("ErrorMessageAccountTypeSelection")
     const loginBtnMain = document.getElementById("loginBtnMain")
     const registerBtn = document.getElementById('registerBtn')
-    gotoRegisterPageBtn.addEventListener('click', () => {
-        window.location.href = "/register"
-    })
+
     loginBtnMain.addEventListener('click', () => {
         const loginForm = document.getElementById('loginForm')
         const loginEmail = document.getElementById('loginEmail').value
