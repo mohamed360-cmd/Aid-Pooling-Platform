@@ -150,9 +150,13 @@ const removeDonation = async(req,res)=>{
             const email = await userVerfier.data.email
             const idorCheck = await idorGuard(donationID,email)
             if(idorCheck.status){
-                var sqlStatement = 'DELETE FROM  donations  WHERE  id=?'
+                var sqlStatement = 'DELETE FROM  donation_Requests WHERE Donation_Id=?'
                 var params = [donationID]
-                const deleteResult = await queryExecuter(sqlStatement,params)
+                const deleteResult1 = await queryExecuter(sqlStatement,params)
+
+                 sqlStatement = 'DELETE FROM  donations  WHERE  id=?'
+                 params = [donationID]
+                const deleteResult2 = await queryExecuter(sqlStatement,params)
                 res.render("home",{authStatus: true, errorStatus: false, successStatus: true, errorMsg: null, successMsg: "Donation Removed", userRole: userVerfier.data.userRole,data : idorCheck.data})
             }else{
                 res.render("home",{authStatus: false, errorStatus: true, successStatus: false, errorMsg: idorCheck.msg, successMsg: null, userRole: userVerfier.data.userRole,data : null})
